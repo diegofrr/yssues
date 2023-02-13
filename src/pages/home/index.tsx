@@ -7,13 +7,10 @@ import axios from "axios";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-import Header from "../../components/PagesComponents/Home/Header";
-import HistoryRepository from "../../components/PagesComponents/Home/HistoryRepository";
-import Button from "../../components/SharedComponents/Button";
-import {
-  SucessToast,
-  ErrorToast,
-} from "../../components/SharedComponents/Toast";
+import Header from "~/components/_pages/Home/Header";
+import HistoryRepository from "~/components/_pages/Home/HistoryRepository";
+import Button from "~/components/_shared/Button";
+import { SucessToast, ErrorToast } from "~/components/_shared/Toast";
 import { RepoHistoryContext } from "../../contexts/StorageRepositories/history";
 import { ThemeContext } from "../../contexts/theme";
 import {
@@ -26,13 +23,15 @@ import {
 
 export default function Home() {
   const router = useRouter();
-  const inputRef = useRef();
+  const inputRef = useRef<HTMLInputElement>(null);
+
   const { theme } = useContext(ThemeContext);
   const { repositories, saveRepositories } = useContext(RepoHistoryContext);
+  const [input, setInput] = useState<string>('');
 
   const [loading, setLoading] = useState(false);
 
-  async function getRepository(repositoryName) {
+  async function getRepository(repositoryName: string) {
     setLoading(true);
     axios
       .get(`https://api.github.com/repos/${repositoryName}`)
@@ -50,7 +49,7 @@ export default function Home() {
       .finally(() => setLoading(false));
   }
 
-  async function searchRepository(input) {
+  async function searchRepository() {
     if (input === " " || !input.includes("/") || input.split("/").length > 2) {
       ErrorToast({
         message: "Digite um nome de repositório válido!",
@@ -61,8 +60,8 @@ export default function Home() {
     }
   }
 
-  function handleKeyPress(e) {
-    if (e.code === "Enter") searchRepository(e.target.value);
+  function handleKeyPress(e: React.KeyboardEvent) {
+    if (e.code === "Enter") searchRepository();
   }
 
   function handleClearHistory() {
@@ -89,16 +88,16 @@ export default function Home() {
                 onKeyPress={(e) => handleKeyPress(e)}
                 placeholder="Pesquisar repositório (user/repository)"
               />
-              <button onClick={() => searchRepository(inputRef.current.value)}>
+              <button onClick={searchRepository}>
                 {loading ? (
                   <ColorRing
-                    wrapperStyle={{ width: 24, height: 24 }}
+                    wrapperStyle={{ width: '24', height: '24' }}
                     visible={true}
                     height="60"
                     width="60"
                     ariaLabel="blocks-loading"
                     wrapperClass="blocks-wrapper"
-                    colors={"#FFFFFF".repeat(5).match(/.{1,7}/g)}
+                    colors={["#FFFFFF", "#FFFFFF", "#FFFFFF", "#FFFFFF", "#FFFFFF"]}
                   />
                 ) : (
                   <FiSearch color="#FFF" size={20} />

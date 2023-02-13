@@ -1,5 +1,9 @@
 import styled, { css } from "styled-components";
 
+interface ContentProps {
+  emptyHistory: boolean
+}
+
 export const Container = styled.main`
   background-color: ${(p) => p.theme.colors.bg};
   padding-top: 60px;
@@ -8,7 +12,7 @@ export const Container = styled.main`
   color: ${(p) => p.theme.colors.primary};
 `;
 
-export const Content = styled.div`
+export const Content = styled.div<ContentProps>`
   width: calc(100% - 40px);
   max-width: 600px;
   margin: auto;
