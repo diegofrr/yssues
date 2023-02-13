@@ -77,6 +77,7 @@ type label = {
 
 export interface Issue {
   id: number,
+  number: number,
   user: User,
   url: string,
   title: string,
