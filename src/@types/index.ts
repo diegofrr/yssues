@@ -53,7 +53,7 @@ export interface Theme {
 
 }
 
-type RepositoryOwner = {
+type User = {
   id: number,
   login: string,
   avatar_url: string,
@@ -62,11 +62,25 @@ type RepositoryOwner = {
 export interface Repository {
   id: number,
   name: string,
-  owner: RepositoryOwner,
+  owner: User,
   description: string | null,
   full_name: string,
   watchers_count: number,
   forks_count: number,
   subscribers_count: number,
   open_issues_count: number,
+}
+
+type label = {
+  name: string
+}
+
+export interface Issue {
+  id: number,
+  user: User,
+  url: string,
+  title: string,
+  state: string,
+  html_url: string,
+  labels: label[]
 }
