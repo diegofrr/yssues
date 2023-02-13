@@ -4,20 +4,20 @@ import { SucessToast, ErrorToast } from "~/components/_shared/Toast";
 import { Repository } from "~/@types";
 
 
-interface ChildrenProps {
+interface ContextProps {
   children: ReactNode
 }
 
-interface ContextProps {
+interface ProviderProps {
   repositories: Repository[],
   isFavorite: (r: Repository) => boolean,
   removeFavorite: (r: Repository) => void,
   toggleFavorite: (r: Repository) => void
 }
 
-export const FavoritesContext = createContext({} as ContextProps);
+export const FavoritesContext = createContext({} as ProviderProps);
 
-export default function FavoritesProvider({ children }: ChildrenProps) {
+export default function FavoritesProvider({ children }: ContextProps) {
   const [repositories, setRepositories] = useState<Repository[]>([]);
 
   useEffect(() => {

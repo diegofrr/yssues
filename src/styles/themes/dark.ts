@@ -1,3 +1,5 @@
+import { Theme } from "~/@types";
+
 export const dark = {
   name: "dark",
   colors: {
@@ -43,4 +45,4 @@ export const dark = {
 
     imgBackground: "#262d38",
   },
-};
+} as Theme;

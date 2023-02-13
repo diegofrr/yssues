@@ -5,52 +5,51 @@ export interface fff {
 
 export interface Theme {
   name: string,
-
   colors: {
     primary: string,
+
     secundary: string
-  },
 
-  bg: string,
-
-  blue: {
-    100: string,
-    200: string,
-    300: string,
-  },
-
-  red: string,
-
-  button: {
     bg: string,
-    text: string,
-    hoverBg: string,
-  },
 
-  input: {
-    bg: string,
-    placeholder: string,
-    text: string,
-  },
+    blue: {
+      100: string,
+      200: string,
+      300: string,
+    },
+    red: string,
 
-  isue: {
-    user: string,
-    title: string,
-  },
+    button: {
+      bg: string,
+      text: string,
+      hoverBg: string,
+    },
 
-  dropdown: {
-    bg: string,
-    text: string,
-    divider: string,
-    shadow: string,
-  },
+    input: {
+      bg: string,
+      placeholder: string,
+      text: string,
+    },
 
-  header: {
-    title: string,
-    border: string,
-  },
+    issue: {
+      user: string,
+      title: string,
+    },
 
-  imgBackground: string,
+    dropdown: {
+      bg: string,
+      text: string,
+      divider: string,
+      shadow: string,
+    },
+
+    header: {
+      title: string,
+      border: string,
+    },
+
+    imgBackground: string,
+  }
 
 }
 

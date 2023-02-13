@@ -1,11 +1,17 @@
 import { createContext, useEffect, useState, ReactNode } from "react";
 import { Repository } from "~/@types";
 
-export const RepoHistoryContext = createContext({});
 
 interface ContextProps {
   children: ReactNode
 }
+
+interface ProviderProps {
+  repositories: Repository[],
+  saveRepositories: (r: Repository[]) => void
+}
+
+export const RepoHistoryContext = createContext({} as ProviderProps);
 
 export default function RepoHistoryProvider({ children }: ContextProps) {
   const [repositories, setRepositories] = useState<Repository[]>([]);
