@@ -33,7 +33,7 @@ export default function Favorites() {
             </>
           ) : (
             <Empty>
-              <img alt="Empty issues icon" src="/assets/empty-favorites.svg" />
+              <img alt="Empty issues icon" src="/images/empty-favorites.svg" />
               <span>
                 Você não possui <br /> repositórios salvos.
               </span>

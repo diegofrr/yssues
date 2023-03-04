@@ -144,7 +144,7 @@ export default function RepositoryNameIssues() {
             </>
           ) : (
             <Empty>
-              <img alt="Empty issues icon" src="/assets/empty-issues.svg" />
+              <img alt="Empty issues icon" src="/images/empty-issues.svg" />
               <span>
                 Não há issues por <br /> aqui ainda.
               </span>
