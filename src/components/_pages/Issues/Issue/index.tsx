@@ -4,10 +4,10 @@ import {
   IssueOpenedIcon as Opened,
   IssueClosedIcon as Closed,
 } from "@primer/octicons-react";
-import { Issue } from "~/@types";
+import { Issue as IssueType } from "~/@types";
 
 interface IssueProps {
-  data: Issue
+  data: IssueType
 }
 
 export default function Issue({ data }: IssueProps) {
