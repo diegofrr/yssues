@@ -1,10 +1,18 @@
+import { ReactNode } from "react";
 import { Container } from "./styles";
 
-export default function Button(props) {
+interface ButtonProps {
+  type: string,
+  primary?: boolean,
+  onClick: () => void,
+  children: ReactNode
+}
+
+export default function Button(props: ButtonProps) {
   return (
     <Container
       onClick={props.onClick}
-      type={props.type}
+      _type={props.type}
       primary={props.primary}
     >
       {props.children}

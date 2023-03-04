@@ -84,6 +84,8 @@ export default function Home() {
             </Description>
             <SearchContainer>
               <input
+                onChange={(e) => setInput(e.target.value)}
+                value={input}
                 ref={inputRef}
                 onKeyPress={(e) => handleKeyPress(e)}
                 placeholder="Pesquisar repositório (user/repository)"

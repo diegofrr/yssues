@@ -1,3 +1,6 @@
+import { createGlobalStyle } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
 * {
   padding: 0;
   margin: 0;
@@ -33,3 +36,6 @@ button {
     font-size: 90%;
   }
 }
+`
+
+export default GlobalStyle;

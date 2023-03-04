@@ -18,5 +18,7 @@ export default function createRepository({ data }: AxiosResponse): Repository {
     watchers_count: data.watchers_count,
   } as Repository;
 
+  console.log(data)
+
   return repository;
 }

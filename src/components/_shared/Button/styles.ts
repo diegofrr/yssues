@@ -1,6 +1,11 @@
 import styled, { css } from "styled-components";
 
-export const Container = styled.button`
+interface ContainerProps {
+  _type?: string,
+  primary?: boolean,
+}
+
+export const Container = styled.button<ContainerProps>`
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
@@ -15,11 +20,11 @@ export const Container = styled.button`
   background-color: ${(p) => p.theme.colors.button.bg};
 
   border-radius: ${(buttonProps) =>
-    buttonProps.type === "rounded"
+    buttonProps._type === "rounded"
       ? "100px"
-      : buttonProps.type === "rounded-square"
-      ? "6px"
-      : 0};
+      : buttonProps._type === "rounded-square"
+        ? "6px"
+        : 0};
 
   svg {
     width: 16px;

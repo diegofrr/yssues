@@ -3,7 +3,7 @@ import { FiArrowLeft } from "react-icons/fi";
 import { HeartFillIcon } from "@primer/octicons-react";
 import { useRouter } from "next/router";
 
-import Button from "../../SharedComponents/Button";
+import Button from "../Button";
 import ToggleThemeButton from "../ToggleThemeButton";
 import {
   ActionButtonsContainer,
@@ -13,8 +13,16 @@ import {
   FavoritesTitle,
   PageInfoContainer,
 } from "./styles";
+import { Repository } from "~/@types";
 
-export default function RepositoryIssuesHeader(props) {
+interface MyProps {
+  isEmpty?: boolean,
+  isIssues?: boolean,
+  isFavorites?: boolean,
+  repository?: Repository,
+}
+
+export default function RepositoryIssuesHeader(props: MyProps) {
   const { repository, isEmpty, isIssues } = props;
   const router = useRouter();
 
@@ -29,11 +37,11 @@ export default function RepositoryIssuesHeader(props) {
         {props.isIssues ? (
           <PageInfoContainer>
             <img
-              alt={`${repository.name} logo`}
-              src={repository.owner.avatar_url}
+              alt={`${repository?.name} logo`}
+              src={repository?.owner.avatar_url}
             />
             <div>
-              <p>{repository.name}</p>
+              <p>{repository?.name}</p>
               <span>{isIssues ? "issues" : "repo"}</span>
             </div>
           </PageInfoContainer>

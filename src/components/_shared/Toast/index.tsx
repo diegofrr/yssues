@@ -1,6 +1,12 @@
 import { toast } from "react-hot-toast";
 
-export const SucessToast = (props) => {
+interface ToastProps {
+  message: string,
+  icon?: any,
+  duration?: number,
+}
+
+export const SucessToast = (props: ToastProps) => {
   toast(props.message, {
     icon: props.icon,
     style: {
@@ -14,7 +20,7 @@ export const SucessToast = (props) => {
   });
 };
 
-export const ErrorToast = (props) => {
+export const ErrorToast = (props: ToastProps) => {
   toast(props.message, {
     icon: props.icon,
     style: {
