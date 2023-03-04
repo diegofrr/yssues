@@ -1,4 +1,9 @@
-Link de acesso: <a href='https://yssues.vercel.app/'>https://yssues.vercel.app/<a/>
+# yssues
+
+Projeto criado a fim de fixar os conhecimentos em front-end (Next.js + TypeScript) e UI (Figma).
+
+Link de acesso: <a href='https://yssues.vercel.app/'>https://yssues.vercel.app/<a/></br>
+Projeto no Figma: <a href='https://www.figma.com/file/8vtPInAURZpUHW2s9BEg3M/yssues?node-id=0%3A1&t=VHv6XZLsEzeVuYZ1-1'>Acessar</a>
 
 ### CAPTURAS DE TELA
 ![image](https://user-images.githubusercontent.com/56923620/222867313-2d86b092-87f4-443f-964c-8bb870c3609c.png)
