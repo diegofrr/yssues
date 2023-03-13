@@ -5,6 +5,9 @@ Projeto criado a fim de fixar os conhecimentos em front-end (Next.js + TypeScrip
 Link de acesso: <a href='https://yssues.vercel.app/'>https://yssues.vercel.app/<a/></br>
 Projeto no Figma: <a href='https://www.figma.com/file/8vtPInAURZpUHW2s9BEg3M/yssues?node-id=0%3A1&t=VHv6XZLsEzeVuYZ1-1'>Acessar</a>
 
+### Em desenvolvimento
+* Alteração da lib CSS-in-JS: Styled Components para Stitches
+
 ### CAPTURAS DE TELA
 ![image](https://user-images.githubusercontent.com/56923620/222867313-2d86b092-87f4-443f-964c-8bb870c3609c.png)
 ![image](https://user-images.githubusercontent.com/56923620/222867391-26d9a913-9dd2-4542-987f-d6ce7832dc12.png)
